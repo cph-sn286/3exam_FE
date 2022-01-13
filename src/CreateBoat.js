@@ -25,9 +25,10 @@ const CreateBoat = () => {
   return <div>
 <h2>Create Boat</h2>
 <form onChange={onChange}>
+<input placeholder="name" id="name"/>
 <input placeholder="brand" id="brand"/>
 <input placeholder="make" id="make"/>
-<input placeholder="name" id="name"/>
+<input placeholder="year" id="year"/>
 <button onClick={createBoat}>create boat</button>
 
 

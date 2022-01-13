@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import facade from "../apiFacade";
 import URL from "../apiFacade";
+import { Link, Switch, Route } from "react-router-dom";
+import Details from "./details";
 
-const Owners = () => {
+const Owner = () => {
   const [owner, setOwner] = useState([]);
 
   useEffect(() => {
@@ -28,14 +30,21 @@ const Owners = () => {
           <div>
             <ul>
               <li>
-                Id {owner.id}, name: {owner.name}, phone: {owner.phone}, address: {owner.address},
+                Id {owner.id}, name: {owner.name}, phone: {owner.phone}, email: {owner.email},
               </li>
+              <Link to={`/owners/${owner.name}`}>Boats</Link>{" "}
             </ul>
           </div>
         ))}
+         <hr />
+      <Switch>
+        <Route path={"/owners/:name"}>
+          <Details />
+        </Route>
+      </Switch>
     </div>
   );
 };
 
 
-export default Owners;
+export default Owner;

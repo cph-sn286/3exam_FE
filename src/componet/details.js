@@ -9,7 +9,7 @@ const Details = () => {
 
   useEffect(() => {
     fetch(
-      "http://localhost:8080/SP1_war_exploded/api/boat/getboatbyharbour/" +
+      "http://localhost:8080/SP1_war_exploded/api/boat/getboatbyowner/" +
         name,
       facade.makeOptions("GET", true)
     )
@@ -18,6 +18,9 @@ const Details = () => {
         setBoat(data);
       });
   },[name]);
+
+
+
 
   return (
     <div>
@@ -30,7 +33,8 @@ const Details = () => {
                   ID: {boat.id} <br />
                   Brand: {boat.brand},
                   Make: {boat.make},
-                  Name: {boat.name}. 
+                  Name: {boat.name},
+                  Year: {boat.year}.
                 </li>
               </ul>
             </div>
