@@ -9,7 +9,7 @@ const Details = () => {
 
   useEffect(() => {
     fetch(
-      "http://localhost:8080/SP1_war_exploded/api/boat/getboatbyowner/" +
+      "http://164.90.227.175:8081/startcode/api/boat/getboatbyowner/" +
         name,
       facade.makeOptions("GET", true)
     )

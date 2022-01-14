@@ -12,7 +12,7 @@ const Info = () => {
   const [auctions, setAuctions] = useState([]);
   useEffect(() => {  
         fetch(
-          "http://localhost:8080/SP1_war_exploded/api/auction/all/" ,
+          "http://164.90.227.175:8081/startcode/api/auction/all/" ,
           facade.makeOptions("GET", true)
         )
           .then((response) => response.json())
@@ -24,7 +24,7 @@ const Info = () => {
   const[owner, setOwner] = useState([]);
   useEffect(() => {  
     fetch(
-      "http://localhost:8080/SP1_war_exploded/api/owner/all/" ,
+      "http://164.90.227.175:8081/startcode/api/owner/all/" ,
       facade.makeOptions("GET", true)
     )
       .then((response) => response.json())
@@ -36,7 +36,7 @@ const Info = () => {
 const[boat, setBoat] = useState([]);
 useEffect(() => {  
   fetch(
-    "http://localhost:8080/SP1_war_exploded/api/boat/all/" ,
+    "http://164.90.227.175:8081/startcode/api/boat/all/" ,
     facade.makeOptions("GET", true)
   )
     .then((response) => response.json())

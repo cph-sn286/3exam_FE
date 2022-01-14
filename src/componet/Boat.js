@@ -11,7 +11,7 @@ const Boat = () => {
 
   useEffect(() => {
     fetch(
-      "http://localhost:8080/SP1_war_exploded/api/boat/all",
+      "http://164.90.227.175:8081/startcode/api/boat/all",
       facade.makeOptions("GET", true)
     )
       .then((response) => response.json())

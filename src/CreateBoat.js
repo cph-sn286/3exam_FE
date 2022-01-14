@@ -8,7 +8,7 @@ const CreateBoat = () => {
   const createBoat = (evt) => {
     evt.preventDefault();
     fetch(
-        "http://localhost:8080/SP1_war_exploded/api/boat/createboat" ,
+        "http://164.90.227.175:8081/startcode/api/boat/createboat" ,
         facade.makeOptions("POST", true,boat)
       )
         .then((response) => response.json())

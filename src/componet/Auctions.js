@@ -14,7 +14,7 @@ const Auctions = () => {
     
       
         fetch(
-          "http://localhost:8080/SP1_war_exploded/api/auction/all/" ,
+          "http://164.90.227.175:8081/startcode/api/auction/all/" ,
           facade.makeOptions("GET", true)
         )
           .then((response) => response.json())

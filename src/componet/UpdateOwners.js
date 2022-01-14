@@ -18,7 +18,7 @@ console.log(id)
   const updateOwners = (evt) => {
     evt.preventDefault();
     fetch(
-        "http://localhost:8080/SP1_war_exploded/api/owner/" + id ,
+        "http://164.90.227.175:8081/startcode/api/owner/" + id ,
         facade.makeOptions("PUT", true, owner)
 
       )
