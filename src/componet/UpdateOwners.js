@@ -1,18 +1,24 @@
 import { useState } from "react";
 import facade from "../apiFacade";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const UpdateOwners = () => {
-    const id = useParams();
-  const ownerInfo = { name: "", phone: "", email: "" };
-  const [owner, setOwner] = useState(ownerInfo);
+  const [owner, setOwner] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
+const location = useLocation()
+const{id} = location.state
+console.log(id)
 
   const updateOwners = (evt) => {
     evt.preventDefault();
     fetch(
-        "http://localhost:8080/SP1_war_exploded/api/owner/" + id.id ,
+        "http://localhost:8080/SP1_war_exploded/api/owner/" + id ,
         facade.makeOptions("PUT", true, owner)
 
       )

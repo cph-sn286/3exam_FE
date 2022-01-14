@@ -1,17 +1,24 @@
 import { useState } from "react";
 import facade from "../apiFacade";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 
 const UpdateAuctions = () => {
-    const id = useParams();
-  const auctionInfo = { name: "", date: "", time: "", location: "" };
-  const [auction, setAuction] = useState(auctionInfo);
+  const [auction, setAuction] = useState({
+    name: "",
+    date: "",
+    time: "",
+    location: "",
+  });
+  const location = useLocation()
+  const {id} = location.state
+
+  console.log(id)
 
   const updateAuction = (evt) => {
     evt.preventDefault();
     fetch(
-        "http://localhost:8080/SP1_war_exploded/api/auction/" + id.id ,
+        "http://localhost:8080/SP1_war_exploded/api/auction/" + id,
         facade.makeOptions("PUT", true,auction)
 
       )
