@@ -11,9 +11,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./componet/Header";
 import Home from "./componet/Home";
-import AddBook from "./componet/AddBook";
 import NoMatch from "./componet/NoMatch";
-import FindBook from "./componet/FindBook";
+
 import LogIn from "./componet/login/LogIn";
 import facade from "./apiFacade";
 import LoggedIn from "./componet/login/LoggedIn";
@@ -26,7 +25,7 @@ import CreateAuction from "./componet/CreateAuction";
 import Info from "./componet/Info";
 import UpdateAuctions from "./componet/UpdateAuctions";
 import UpdateOwner from "./componet/UpdateOwners";
-
+import DeleteAuctions from "./componet/DeleteAuctions";
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -44,12 +43,6 @@ function App(props) {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Route>
-        <Route path="/add-book">
-          <AddBook bookFacade={props.bookFacade} />
-        </Route>
-        <Route path="/find-book">
-          <FindBook bookFacade={props.bookFacade} />
         </Route>
         <Route path="/auctions">
           <Auctions />
@@ -77,6 +70,9 @@ function App(props) {
         </Route>
         <Route path="/create-auction">
           <CreateAuction CreateAuction={props.LogIn}/>
+        </Route>
+        <Route path="/delete-Auctions">
+          <DeleteAuctions />
         </Route>
         <route path="/login">
           <div>

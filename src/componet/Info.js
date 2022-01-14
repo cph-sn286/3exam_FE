@@ -6,7 +6,7 @@ import React from "react";
 import UpdateBoat from "./UpdateBoat";
 import { Link, Switch, Route } from "react-router-dom";
 import UpdateAuctions from "./UpdateAuctions";
-import UpdateOwner from "./UpdateOwners";
+import UpdateOwners from "./UpdateOwners";
 
 const Info = () => {
   const [auctions, setAuctions] = useState([]);
@@ -90,7 +90,7 @@ return (
           <UpdateBoat />
         </Route>
         <Route path={"/update-Owners/:id"}>
-          <UpdateOwner />
+          <UpdateOwners />
         </Route>
         <Route path={"/update-Auctions/:id"}>
           <UpdateAuctions />

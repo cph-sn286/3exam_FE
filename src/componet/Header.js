@@ -7,8 +7,6 @@ import React from "react";
 
 function Header() {
 
-  
-
 
   return (
     <div>
@@ -28,10 +26,6 @@ function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="" to="/harbours">
-            Harbours
-          </NavLink>
-        </li>  <li>
           <NavLink activeClassName="active" to="/info">
             info
           </NavLink>
@@ -39,16 +33,6 @@ function Header() {
         <li>
           <NavLink activeClassName="active" to="/boats">
             Boat
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" to="/add-book">
-            Add Book
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" to="/find-book">
-            Find Book
           </NavLink>
         </li>
         <li>

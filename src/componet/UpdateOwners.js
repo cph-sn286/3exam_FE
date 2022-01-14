@@ -2,17 +2,18 @@ import { useState } from "react";
 import facade from "../apiFacade";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-const UpdateOwner = () => {
+const UpdateOwners = () => {
     const id = useParams();
   const ownerInfo = { name: "", phone: "", email: "" };
   const [owner, setOwner] = useState(ownerInfo);
 
-  const updateOwner = (evt) => {
+  const updateOwners = (evt) => {
     evt.preventDefault();
     fetch(
-        "http://localhost:8080/SP1_war_exploded/api/owner/" +id.id,
-        facade.makeOptions("PUT", true,owner)
+        "http://localhost:8080/SP1_war_exploded/api/owner/" + id.id ,
+        facade.makeOptions("PUT", true, owner)
 
       )
         .then((response) => response.json())
@@ -33,7 +34,7 @@ const UpdateOwner = () => {
 <input placeholder="name" id="name"/>
 <input placeholder="phone" id="phone"/>
 <input placeholder="email" id="email"/>
-<button onClick={updateOwner}>update Owner</button>
+<button onClick={updateOwners}>update owners</button>
 
 
 
@@ -43,4 +44,4 @@ const UpdateOwner = () => {
   </div>;
 };
 
-export default UpdateOwner;
+export default UpdateOwners;
